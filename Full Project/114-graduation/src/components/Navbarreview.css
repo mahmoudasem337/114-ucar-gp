@@ -1,0 +1,43 @@
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 1rem;
+}
+  
+  .navbar-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* يمكنك تفعيل هذا إذا كنت تريد محاذاة عمودية للعناصر */
+    justify-content: space-between; 
+    /* استخدام space-between لتوزيع العناصر بيظن الطرفين */
+  }
+  
+
+  
+  .car-icon {
+    width: 24px;
+    height: 24px;
+    color: #6b7280; /* لون رمادي خفيف */
+  }
+  
+  .navbar-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937; /* لون النص رمادي غامق */
+  }
+  
+  .review-button {
+    background-color: #7c3aed;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .review-button:hover {
+    background-color: #6b21a8;
+  }
+  

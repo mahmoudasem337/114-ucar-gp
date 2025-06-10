@@ -1,0 +1,47 @@
+.review-table-container {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1200px;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.review-table-container table {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+.review-table-container th,
+.review-table-container td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.review-table-container th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.review-table-container .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.review-table-container .delete {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.review-table-container .delete:hover {
+  background-color: #e60000;
+}
+
+.review-table-container .icon {
+  vertical-align: middle;
+}

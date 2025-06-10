@@ -1,0 +1,63 @@
+# ========== IDE & System ==========
+.idea/
+*.iml
+*.iws
+.DS_Store
+Thumbs.db
+*.log
+
+# ========== Java / Spring Boot ==========
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.tmp
+
+# Maven / Gradle
+.mvn/
+build/
+.gradle/
+
+# ========== Node / React ==========
+node_modules/
+build/
+dist/
+.cache/
+*.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========== Python / AI Models ==========
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+*.h5
+*.pt
+*.pth
+*.onnx
+*.pb
+*.ckpt
+model_checkpoints/
+saved_models/
+inference_results/
+*.pickle
+*.joblib
+**/venv/
+
+# If you downloaded huggingface or similar models locally
+models/
+weights/
+logs/
+runs/
+*.tflite
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb~  # temp files
+
+# ========== VS Code ==========
+.vscode/

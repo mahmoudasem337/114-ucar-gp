@@ -1,0 +1,174 @@
+/* CarListings.css */
+
+.car-listings-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f8f8f8; /* لون خلفية أفتح */
+}
+
+.car-listings-container {
+  flex: 1;
+  padding: 30px; /* زيادة مساحة الحشو */
+  width: 100%;
+}
+
+.car-listings-wrapper {
+  max-width: 1300px; /* عرض أكبر قليلاً */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px; /* زيادة المسافة أسفل الهيدر */
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .header-section {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-image {
+  height: 36px; /* حجم أكبر للوجو */
+  width: auto;
+}
+
+.page-title {
+  font-size: 28px; /* حجم أكبر للعنوان */
+  font-weight: 700;
+  color: #7e22ce; /* لون أغمق قليلاً للعنوان */
+  margin: 0;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px; /* عرض أكبر لمربع البحث */
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 10px 10px 36px; /* زيادة مساحة الحشو */
+  border: 1px solid #ddd; /* لون حدود أفتح */
+  border-radius: 10px; /* حواف مدورة أكثر */
+  font-size: 16px; /* حجم خط أكبر */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* ظل خفيف */
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #7e22ce;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  left: 250px; /* مسافة أكبر للأيقونة من اليسار */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999; /* لون أغمق للأيقونة */
+  font-size: 18px; /* حجم أكبر للأيقونة */
+}
+
+.main-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* زيادة المسافة بين الفلاتر والكروت */
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .main-grid {
+      flex-direction: row;
+  }
+}
+
+.filters-section {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .filters-section {
+      width: 28%; /* زيادة عرض قسم الفلاتر */
+      min-width: 280px; /* حد أدنى لعرض الفلاتر */
+  }
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px; /* زيادة المسافة بين الكروت */
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.loading-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 18px;
+  color: #777;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: #d32f2f;
+  padding: 20px;
+  text-align: center;
+}
+
+.error-message h3 {
+  margin-bottom: 10px;
+}
+
+.error-message button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.error-message button:hover {
+  background-color: #d32f2f;
+}
+
+.cards-grid p {
+  font-size: 16px;
+  color: #777;
+  text-align: center;
+  padding: 20px;
+}

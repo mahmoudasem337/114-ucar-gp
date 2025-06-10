@@ -1,0 +1,93 @@
+.write-review-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('/images/aashish-chandra-PDIjoPwN4BI-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .write-review-form-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+  }
+  
+  .write-review-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 48rem;
+  }
+  
+  .write-review-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .write-review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-label {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+  }
+  
+  .form-textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 8rem;
+  }
+  
+  .submit-button {
+    background-color: #6b46c1;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .submit-button:hover {
+    background-color: #553c9a;
+  }
+  
+  .write-review-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2e2a40;
+    color: white;
+    font-size: 0.875rem;
+  }

@@ -1,0 +1,192 @@
+DROP TABLE IF EXISTS image;
+DROP TABLE IF EXISTS search_log;
+DROP TABLE IF EXISTS review;
+DROP TABLE IF EXISTS advertisement;
+DROP TABLE IF EXISTS [user];
+
+CREATE TABLE [user] (
+    id BIGINT PRIMARY KEY IDENTITY(1,1),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    phonenumber VARCHAR(255),
+    role VARCHAR(10) CHECK (role IN ('ADMIN', 'USER')), -- بديل ENUM
+    username VARCHAR(255)
+);
+
+CREATE TABLE advertisement (
+    advertisementid BIGINT PRIMARY KEY IDENTITY(1,1),
+    created_at DATETIME2(6),
+    carbodytype VARCHAR(255),
+    carcolor VARCHAR(255),
+    cardescription VARCHAR(255),
+    carfueltype VARCHAR(255),
+    carmake VARCHAR(255),
+    carmodel VARCHAR(255),
+    carprice DECIMAL(38,2),
+    carproductionyear INT,
+    cartransmissiontype VARCHAR(255),
+    enginecapacity DECIMAL(38,2),
+    kilometers DECIMAL(38,2),
+    owner VARCHAR(255),
+    ownerlocation VARCHAR(255),
+    ownerphonenumber VARCHAR(255)
+);
+
+CREATE TABLE image (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(), -- بديل BINARY(16) مع استخدام NEWID()
+    url VARCHAR(255),
+    advertisement_id BIGINT,
+    CONSTRAINT fk_image_advertisement FOREIGN KEY (advertisement_id)
+        REFERENCES advertisement(advertisementid)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE search_log (
+    id BIGINT PRIMARY KEY IDENTITY(1,1),
+    search_query VARCHAR(255),
+    timestamp DATETIME2(6),
+    user_id_id BIGINT,
+    CONSTRAINT fk_searchlog_user FOREIGN KEY (user_id_id)
+        REFERENCES [user](id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE review (
+    review_id BIGINT PRIMARY KEY IDENTITY(1,1),
+    brand VARCHAR(255),
+    car_model VARCHAR(255),
+    car_review VARCHAR(255),
+    review_by VARCHAR(255),
+    review_date DATE,
+    year INT
+);
+
+INSERT INTO [user] (email, password, phonenumber, role, username)
+VALUES 
+    ('ahmed@gmail.com', 'pass123', '01234567890', 'USER', 'ahmed'),
+    ('sara@gmail.com', 'pass456', '01122334455', 'USER', 'sara'),
+    ('khalid@gmail.com', 'pass789', '01055667788', 'USER', 'khalid'),
+    ('nour@gmail.com', 'pass101', '01555667788', 'USER', 'nour'),
+    ('omar@gmail.com', 'pass202', '01233445566', 'USER', 'omar');
+
+INSERT INTO advertisement (created_at, carbodytype, carcolor, cardescription, carfueltype, carmake, carmodel, carprice, carproductionyear, cartransmissiontype, enginecapacity, kilometers, owner, ownerlocation, ownerphonenumber)
+VALUES 
+
+
+('2025-05-10 08:00', 'sedan', 'white', 'سيارة نضيفة جديدة', 'gasoline', 'toyota', 'corolla', 480000, 2022, 'automatic', 1.8, 15000, 'ali', 'cairo', '01234567890'),
+('2025-05-10 08:05', 'sedan', 'silver', 'سيارة ممتازة', 'gasoline', 'toyota', 'camry', 650000, 2021, 'automatic', 2.5, 30000, 'hassan', 'giza', '01012345678'),
+('2025-05-10 08:10', 'suv', 'black', 'فبريكة نظيفة', 'gasoline', 'toyota', 'rav4', 800000, 2023, 'automatic', 2.0, 10000, 'mohamed', 'alexandria', '01122334455'),
+('2025-05-10 08:15', 'sedan', 'grey', 'سيارة جيدة', 'gasoline', 'toyota', 'yaris', 350000, 2020, 'manual', 1.5, 40000, 'zain', 'luxor', '01255667788'),
+('2025-05-10 08:20', 'suv', 'red', 'نضيفة ومريحة', 'gasoline', 'toyota', 'highlander', 900000, 2022, 'automatic', 3.5, 15000, 'reem', 'aswan', '01533445566'),
+
+('2025-05-10 08:25', 'sedan', 'red', 'سيارة جيدة', 'diesel', 'hyundai', 'elantra', 250000, 2018, 'manual', 1.6, 80000, 'nour', 'heliopolis', '01555667788'),
+('2025-05-10 08:30', 'suv', 'blue', 'سيارة مستعملة', 'gasoline', 'hyundai', 'tucson', 450000, 2020, 'automatic', 2.0, 45000, 'sara', 'mansoura', '01298765432'),
+('2025-05-10 08:35', 'sedan', 'black', 'سيارة اقتصادية', 'gasoline', 'hyundai', 'accent', 300000, 2019, 'manual', 1.4, 60000, 'kareem', 'port said', '01077889900'),
+('2025-05-10 08:40', 'suv', 'white', 'فبريكة ممتازة', 'diesel', 'hyundai', 'santa fe', 700000, 2021, 'automatic', 2.2, 30000, 'youssef', 'suez', '01166778899'),
+
+('2025-05-10 08:45', 'sedan', 'silver', 'فبريكة ممتازة', 'gasoline', 'mercedes', 'c180', 700000, 2023, 'automatic', 2.0, 10000, 'khalid', 'giza', '01055667788'),
+('2025-05-10 08:50', 'coupe', 'black', 'سيارة فاخرة', 'gasoline', 'mercedes', 'cla200', 900000, 2022, 'automatic', 2.0, 20000, 'ahmed', 'cairo', '01144556677'),
+('2025-05-10 08:55', 'suv', 'grey', 'نضيفة جديدة', 'gasoline', 'mercedes', 'gle350', 1200000, 2023, 'automatic', 3.0, 8000, 'fatma', 'alexandria', '01233445566'),
+
+('2025-05-10 09:00', 'hatchback', 'red', 'سيارة جديدة', 'gasoline', 'kia', 'picanto', 300000, 2021, 'manual', 1.2, 20000, 'layan', 'alexandria', '01522334455'),
+('2025-05-10 09:05', 'suv', 'grey', 'نضيفة ومريحة', 'gasoline', 'kia', 'sportage', 550000, 2022, 'automatic', 2.0, 25000, 'omar', 'tanta', '01233445566'),
+('2025-05-10 09:10', 'sedan', 'blue', 'سيارة جيدة', 'gasoline', 'kia', 'rio', 400000, 2020, 'automatic', 1.6, 35000, 'nada', 'zagazig', '01188990011'),
+
+('2025-05-10 09:15', 'sedan', 'white', 'سيارة اقتصادية', 'gasoline', 'renault', 'logan', 200000, 2019, 'manual', 1.6, 70000, 'youssef', 'port said', '01077889900'),
+('2025-05-10 09:20', 'suv', 'green', 'قوية ومتينة', 'diesel', 'renault', 'duster', 350000, 2020, 'manual', 1.5, 50000, 'salma', 'ismailia', '01544556677'),
+
+('2025-05-10 09:25', 'suv', 'green', 'قوية ومتينة', 'diesel', 'chevrolet', 'captiva', 400000, 2020, 'automatic', 2.4, 60000, 'fatma', 'suez', '01166778899'),
+('2025-05-10 09:30', 'sedan', 'silver', 'سيارة مستعملة', 'gasoline', 'chevrolet', 'malibu', 300000, 2019, 'automatic', 2.0, 65000, 'ibrahim', 'sharm el sheikh', '01266778899'),
+
+('2025-05-10 09:35', 'sedan', 'black', 'نضيفة ومريحة', 'gasoline', 'toyota', 'prius', 500000, 2021, 'automatic', 1.8, 30000, 'rami', 'hurghada', '01033445566'),
+('2025-05-10 09:40', 'suv', 'white', 'فبريكة جديدة', 'gasoline', 'hyundai', 'palisade', 850000, 2022, 'automatic', 2.2, 18000, 'leila', 'assiut', '01155667788'),
+('2025-05-10 09:45', 'coupe', 'red', 'سيارة فاخرة', 'gasoline', 'mercedes', 'e300', 1100000, 2023, 'automatic', 2.0, 12000, 'tarek', 'fayoum', '01277889900'),
+('2025-05-10 09:50', 'hatchback', 'green', 'سيارة اقتصادية', 'gasoline', 'kia', 'morning', 280000, 2020, 'manual', 1.0, 45000, 'hana', 'benha', '01566778899'),
+
+('2025-05-10 12:00', 'sedan', 'blue', 'سيارة نظيفة', 'gasoline', 'toyota', 'yaris', 350000, 2020, 'manual', 1.5, 40000, 'zain', 'luxor', '01255667788'),
+('2025-05-10 12:05', 'suv', 'black', 'فبريكة جديدة', 'gasoline', 'hyundai', 'santa fe', 750000, 2023, 'automatic', 2.2, 12000, 'reem', 'aswan', '01533445566'),
+('2025-05-10 12:10', 'sedan', 'white', 'سيارة جيدة', 'diesel', 'renault', 'megane', 320000, 2021, 'manual', 1.5, 35000, 'sami', 'damietta', '01088990011'),
+('2025-05-10 12:15', 'suv', 'grey', 'قوية ونظيفة', 'gasoline', 'chevrolet', 'traverse', 600000, 2022, 'automatic', 3.6, 20000, 'laila', 'qena', '01133445566'),
+('2025-05-10 12:20', 'hatchback', 'red', 'سيارة جديدة', 'gasoline', 'kia', 'cee''d', 400000, 2021, 'automatic', 1.6, 25000, 'yasmin', 'sohag', '01244556677'),
+
+('2025-05-10 15:00', 'sedan', 'silver', 'فبريكة ممتازة', 'gasoline', 'mercedes', 'a200', 800000, 2022, 'automatic', 1.3, 15000, 'karim', 'maadi', '01066778899'),
+('2025-05-10 15:05', 'suv', 'blue', 'نضيفة ومريحة', 'diesel', 'toyota', 'land cruiser', 1500000, 2023, 'automatic', 4.0, 5000, 'nader', 'nasr city', '01177889900'),
+
+
+('2025-05-10 15:05', 'hatchback', 'white', 'سيارة كيا بيccanتو جديدة ونضيفة', 'petrol', 'kia', 'picanto', 290000.00, 2022, 'automatic', 1.2, 15000.0, 'Ali', 'cairo', '01012345678'),
+('2025-05-10 15:05', 'hatchback', 'silver', 'كيا بيتو فبريكة ممتازة', 'petrol', 'kia', 'picanto', 310000.00, 2023, 'automatic', 1.2, 10000.0, 'Sara', 'alexandria', '01123456789'),
+('2025-05-10 15:05', 'hatchback', 'red', 'سيارة كيا بيccanتو نظيفة', 'petrol', 'kia', 'picanto', 280000.00, 2021, 'automatic', 1.2, 20000.0, 'Mohamed', 'giza', '01234567890'),
+
+
+('2025-05-10 08:25', 'sedan', 'silver', 'سيارة نضيفة جديدة', 'gasoline', 'toyota', 'corolla', 520000, 2021, 'automatic', 1.8, 20000, 'ahmed', 'cairo', '01099887766'),
+('2025-05-10 08:30', 'sedan', 'white', 'فبريكة ممتازة', 'gasoline', 'toyota', 'camry', 550000, 2022, 'automatic', 2.5, 18000, 'sami', 'cairo', '01233445577'),
+('2025-05-10 08:35', 'suv', 'grey', 'نضيفة ومريحة', 'gasoline', 'toyota', 'rav4', 580000, 2021, 'automatic', 2.0, 25000, 'nada', 'cairo', '01122334488'),
+
+('2025-05-10 09:00', 'sedan', 'black', 'سيارة اقتصادية', 'gasoline', 'hyundai', 'elantra', 310000, 2020, 'automatic', 1.6, 35000, 'kamel', 'cairo', '01055667799'),
+('2025-05-10 09:05', 'sedan', 'silver', 'نضيفة جديدة', 'gasoline', 'hyundai', 'accent', 290000, 2021, 'manual', 1.4, 30000, 'layla', 'cairo', '01244556688'),
+('2025-05-10 09:10', 'sedan', 'white', 'فبريكة ممتازة', 'gasoline', 'hyundai', 'sonata', 320000, 2022, 'automatic', 2.0, 20000, 'hassan', 'cairo', '01166778899'),
+
+('2025-05-10 09:15', 'sedan', 'black', 'سيارة فاخرة', 'gasoline', 'mercedes', 'c200', 680000, 2022, 'automatic', 2.0, 15000, 'tamer', 'giza', '01077889911'),
+('2025-05-10 09:20', 'suv', 'white', 'فبريكة نضيفة', 'gasoline', 'mercedes', 'glc300', 720000, 2021, 'automatic', 2.0, 22000, 'sara', 'alexandria', '01255667799'),
+('2025-05-10 09:25', 'coupe', 'silver', 'سيارة فاخرة', 'gasoline', 'mercedes', 'c300', 750000, 2023, 'automatic', 2.0, 10000, 'omar', 'cairo', '01188990022'),
+
+('2025-05-10 14:15', 'hatchback', 'blue', 'سيارة نضيفة', 'petrol', 'kia', 'picanto', 280000, 2021, 'automatic', 1.2, 25000, 'mohammed', 'giza', '01012345699'),
+('2025-05-10 14:20', 'hatchback', 'red', 'فبريكة ممتازة', 'petrol', 'kia', 'picanto', 300000, 2022, 'automatic', 1.2, 15000, 'fatma', 'alexandria', '01233445588'),
+('2025-05-10 14:25', 'hatchback', 'green', 'سيارة اقتصادية', 'petrol', 'kia', 'picanto', 270000, 2020, 'manual', 1.2, 40000, 'zainab', 'cairo', '01144556677'),
+
+('2025-05-10 15:15', 'suv', 'black', 'نضيفة ومريحة', 'gasoline', 'chevrolet', 'equinox', 450000, 2021, 'automatic', 2.0, 30000, 'ali', 'suez', '01055667788'),
+('2025-05-10 15:20', 'suv', 'silver', 'فبريكة ممتازة', 'gasoline', 'chevrolet', 'trax', 480000, 2022, 'automatic', 1.4, 20000, 'kareem', 'qena', '01266778899'),
+('2025-05-10 15:25', 'suv', 'grey', 'سيارة قوية', 'diesel', 'chevrolet', 'blazer', 520000, 2020, 'automatic', 2.5, 35000, 'nour', 'mansoura', '01177889900'),
+
+('2025-05-10 10:00', 'sedan', 'blue', 'سيارة اقتصادية', 'gasoline', 'renault', 'logan', 220000, 2019, 'manual', 1.6, 60000, 'youssef', 'port said', '01088990011'),
+('2025-05-10 10:05', 'hatchback', 'white', 'نضيفة جديدة', 'petrol', 'kia', 'morning', 250000, 2020, 'manual', 1.0, 35000, 'sama', 'zagazig', '01244556699'),
+('2025-05-10 10:10', 'sedan', 'red', 'سيارة جيدة', 'gasoline', 'hyundai', 'accent', 240000, 2018, 'manual', 1.4, 70000, 'rami', 'damietta', '01122334466'),
+('2025-05-10 10:15', 'hatchback', 'silver', 'فبريكة ممتازة', 'petrol', 'kia', 'picanto', 260000, 2019, 'automatic', 1.2, 45000, 'hala', 'tanta', '01255667788'),
+('2025-05-10 10:20', 'sedan', 'green', 'سيارة اقتصادية', 'diesel', 'renault', 'megane', 230000, 2020, 'manual', 1.5, 50000, 'ibrahim', 'luxor', '01033445577'),
+
+('2025-05-10 10:25', 'suv', 'black', 'قوية ومتينة', 'diesel', 'jeep', 'cherokee', 600000, 2021, 'automatic', 2.0, 25000, 'tarek', 'aswan', '01166778822'),
+('2025-05-10 10:30', 'sedan', 'white', 'نضيفة ومريحة', 'gasoline', 'nissan', 'altima', 400000, 2020, 'automatic', 2.5, 30000, 'salma', 'hurghada', '01277889933'),
+('2025-05-10 10:35', 'hatchback', 'yellow', 'سيارة جديدة', 'petrol', 'honda', 'fit', 350000, 2021, 'manual', 1.5, 20000, 'yara', 'fayoum', '01044556688'),
+('2025-05-10 10:40', 'suv', 'red', 'فبريكة ممتازة', 'gasoline', 'ford', 'escape', 500000, 2022, 'automatic', 2.0, 18000, 'khaled', 'sharm el sheikh', '01188990044'),
+('2025-05-10 10:45', 'coupe', 'blue', 'سيارة فاخرة', 'gasoline', 'bmw', '420i', 800000, 2023, 'automatic', 2.0, 12000, 'laila', 'maadi', '01233445599'),
+('2025-05-10 10:50', 'sedan', 'grey', 'نضيفة جديدة', 'gasoline', 'volkswagen', 'passat', 450000, 2021, 'automatic', 2.0, 25000, 'mohsen', 'assiut', '01066778811'),
+('2025-05-10 10:55', 'suv', 'white', 'قوية ومريحة', 'diesel', 'land rover', 'discovery', 1000000, 2022, 'automatic', 3.0, 15000, 'nabil', 'nasr city', '01144556622'),
+('2025-05-10 11:00', 'hatchback', 'black', 'سيارة اقتصادية', 'petrol', 'peugeot', '208', 280000, 2020, 'manual', 1.2, 40000, 'rana', 'benha', '01255667744'),
+('2025-05-10 11:05', 'sedan', 'silver', 'فبريكة ممتازة', 'gasoline', 'audi', 'a4', 700000, 2022, 'automatic', 2.0, 20000, 'samer', 'heliopolis', '01077889955'),
+('2025-05-10 11:10', 'suv', 'green', 'نضيفة ومتينة', 'gasoline', 'mitsubishi', 'outlander', 550000, 2021, 'automatic', 2.4, 30000, 'hani', 'sohag', '01122334477'),
+
+('2025-05-10 11:15', 'sedan', 'black', 'سيارة نضيفة', 'gasoline', 'toyota', 'corolla', 490000, 2021, 'automatic', 1.8, 22000, 'ali', 'cairo', '01234567891'),
+('2025-05-10 11:20', 'sedan', 'white', 'فبريكة ممتازة', 'gasoline', 'hyundai', 'elantra', 300000, 2020, 'automatic', 1.6, 35000, 'mona', 'cairo', '01055667722'),
+('2025-05-10 11:25', 'suv', 'silver', 'نضيفة ومريحة', 'gasoline', 'kia', 'sportage', 520000, 2021, 'automatic', 2.0, 28000, 'youssef', 'cairo', '01166778833'),
+('2025-05-10 11:30', 'hatchback', 'red', 'سيارة اقتصادية', 'petrol', 'kia', 'picanto', 275000, 2020, 'manual', 1.2, 45000, 'zahra', 'cairo', '01244556699'),
+('2025-05-10 11:35', 'sedan', 'grey', 'فبريكة نضيفة', 'gasoline', 'mercedes', 'c180', 710000, 2022, 'automatic', 2.0, 18000, 'karim', 'cairo', '01088990044'),
+
+('2025-05-10 11:40', 'suv', 'blue', 'قوية ومتينة', 'diesel', 'chevrolet', 'captiva', 410000, 2020, 'automatic', 2.4, 32000, 'samer', 'zagazig', '01122334488'),
+('2025-05-10 11:45', 'sedan', 'red', 'نضيفة جديدة', 'gasoline', 'toyota', 'camry', 600000, 2021, 'automatic', 2.5, 25000, 'hala', 'tanta', '01255667733'),
+('2025-05-10 11:50', 'hatchback', 'white', 'سيارة جيدة', 'petrol', 'kia', 'morning', 260000, 2019, 'manual', 1.0, 50000, 'nour', 'mansoura', '01066778855'),
+('2025-05-10 11:55', 'suv', 'green', 'فبريكة ممتازة', 'gasoline', 'hyundai', 'tucson', 470000, 2021, 'automatic', 2.0, 30000, 'mohamed', 'hurghada', '01144556699'),
+('2025-05-10 12:00', 'sedan', 'black', 'سيارة فاخرة', 'gasoline', 'mercedes', 'e200', 850000, 2022, 'automatic', 2.0, 15000, 'fatma', 'luxor', '01233445566');
+
+
+
+
+INSERT INTO search_log (user_id_id, search_query, timestamp)
+VALUES 
+
+(1, 'سيارة تويوتا نضيفة 500k', '2025-05-10 10:00:00'),
+(1, 'مش عايز قديمة أبدًا', '2025-05-10 10:05:00'),
+(1, 'تويوتا القاهرة', '2025-05-10 10:10:00'),
+
+(2, 'هيونداي 2020 القاهرة', '2025-05-10 11:00:00'),
+(2, 'سيدان 300k جديدة', '2025-05-10 11:15:00'),
+(2, 'سيارة اقتصادية', '2025-05-10 11:20:00'),
+
+(3, 'مرسيدس فبريكة 700k', '2025-05-10 12:00:00'),
+(3, 'سيارة فاخرة أوتوماتيك', '2025-05-10 12:05:00'),
+
+(4, 'كيا بيتو 300k', '2025-05-10 14:00:00'),
+(4, 'هاتشباك', '2025-05-10 14:10:00'),
+
+(5, 'سيارة suv 500k', '2025-05-10 15:00:00'),
+(5, 'Chevrolet', '2025-05-10 15:05:00'),
+(5, 'نضيفة ومريحة', '2025-05-10 15:10:00');

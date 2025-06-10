@@ -1,0 +1,81 @@
+/* Table Container */
+.user-table-container {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  table {
+    width: 100%;
+    min-width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    background-color: #f9fafb;
+  }
+  
+  th {
+    padding: 12px 24px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  tbody {
+    background-color: white;
+  }
+  
+  tr {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  td {
+    padding: 12px 24px;
+    font-size: 14px;
+    color: #4b5563;
+  }
+  
+  td .user-name {
+    font-weight: 600;
+  }
+  
+  td .user-type,
+  td .user-email,
+  td .user-phone {
+    color: #6b7280;
+  }
+  
+  .actions {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  button:hover {
+    color: #1f2937;
+  }
+  
+  button.delete:hover {
+    color: #dc2626;
+  }
+  
+  /* Icons styling */
+  button .icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  

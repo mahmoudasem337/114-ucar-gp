@@ -1,0 +1,82 @@
+/* الحاوية الرئيسية للصفحة */
+.dashboard-container {
+  padding: 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+/* الحاوية الخاصة بالبطاقات الإحصائية */
+.stats-grid {
+  display: flex;
+  justify-content: space-between; /* لضبط المسافات بين العناصر بشكل أفضل */
+  gap: 1rem; 
+  margin-bottom:2rem;
+}
+
+/* تنسيق البطاقات لتظهر جنب بعض */
+.stat-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1 1 calc(33.333% - 2rem); /* هذا يضمن أن البطاقات تكون بجانب بعضها في 3 أعمدة */
+  min-width: 280px; /* الحد الأدنى للعرض */
+}
+
+.stat-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+.stat-card .stat-icon {
+  font-size: 2.5rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+/* على الشاشات الصغيرة، نعرض البطاقات في صف واحد */
+@media (max-width: 768px) {
+  .stat-card {
+    flex: 1 1 100%; /* جعل البطاقات تأخذ العرض الكامل على الشاشات الصغيرة */
+  }
+}
+
+/* تنسيق حاويات الرسوم البيانية */
+.charts-grid {
+  display: flex;
+  gap: 2rem;
+}
+
+.chart-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  flex: 1 1 calc(50% - 2rem); /* هذا يضمن أن الرسم البيانيين يعرضان بجانب بعض */
+  min-width: 280px;
+}
+
+.chart-card:hover {
+  transform: translateY(-10px);
+}
+
+.chart-container {
+  height: 300px;
+  position: relative;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 8px;
+}

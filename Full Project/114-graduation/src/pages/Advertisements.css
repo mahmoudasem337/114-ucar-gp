@@ -1,0 +1,158 @@
+/* الحاوية العامة التي تحتوي على الشريط الجانبي والمحتوى */
+.page-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* الشريط الجانبي */
+  .sidebar-wrapper {
+    width: 250px; /* عرض الشريط الجانبي */
+    background-color: #2d3748;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 10; /* التأكد من أنه فوق كل العناصر الأخرى */
+    overflow-y: auto;
+  }
+  
+  /* محتوى الصفحة */
+  .main-wrapper {
+  /* تأكيد أن المحتوى يبدأ بعد الشريط الجانبي */
+    padding: 24px;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  
+  /* العنوان */
+  .page-heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+  }
+  
+  .ad-list-wrapper {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  
+  .list-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 16px;
+  }
+  
+  .ad-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-header {
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #718096;
+    text-transform: uppercase;
+  }
+  
+  .table-cell {
+    padding: 12px 20px;
+    font-size: 0.875rem;
+    color: #4a5568;
+    border-bottom: 1px solid #edf2f7;
+  }
+  
+  .actions-wrapper {
+    text-align: right;
+  }
+  
+  .delete-action {
+    background-color: #e53e3e;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+  }
+  
+  .delete-action:hover {
+    background-color: #c53030;
+  }
+  
+  .overlay-wrapper {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(31, 41, 55, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+  }
+  
+  .modal-wrapper {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .modal-heading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+  }
+  
+  .modal-actions-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .cancel-action, .confirm-action {
+    padding: 10px 18px;
+    font-size: 0.875rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    width: 48%;
+  }
+  
+  .cancel-action {
+    background-color: #edf2f7;
+    color: #2d3748;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .cancel-action:hover {
+    background-color: #cbd5e0;
+  }
+  
+  .confirm-action {
+    background-color: #38a169;
+    color: white;
+    border: 1px solid #2f855a;
+  }
+  
+  .confirm-action:hover {
+    background-color: #2f855a;
+  }
+  

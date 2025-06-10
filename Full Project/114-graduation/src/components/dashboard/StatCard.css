@@ -1,0 +1,46 @@
+.stat-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  .x{
+    padding:1rem ;
+    border: 2px solid red ;
+  }
+  
+  .stat-card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .stat-card-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .stat-card-title {
+    font-size: 0.875rem;
+    color: #6B7280; /* تقريباً نفس درجة الرمادي اللي في Tailwind */
+  }
+  
+  .stat-card-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0.25rem;
+  }
+  
+  .stat-card-icon {
+    background-color: #EFF6FF; /* blue-50 */
+    padding: 0.75rem;
+    border-radius: 9999px; /* دائرة كاملة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon {
+    color: #3B82F6; /* blue-500 */
+  }
+  

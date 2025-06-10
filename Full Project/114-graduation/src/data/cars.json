@@ -1,0 +1,144 @@
+{
+    "cars": [
+      {
+        "id": 1,
+        "name": "Toyota Corolla 2020",
+        "fuel": "Petrol",
+        "mileage": "134,000 km",
+        "body": "Sedan",
+        "color": "Silver",
+        "transmission": "Automatic",
+        "year": 2020,
+        "location": "Egypt",
+        "price": 1085000,
+        "engine": 1600,
+        "phone": "+01225415614",
+        "description": "The 2020 Toyota Corolla, part of the 12th generation, is a compact sedan known for its reliability, modern design, and advanced features. It offers a blend of efficiency, technology, and safety, available in multiple trims to suit various preferences. Exterior Design: Sleek and Sporty Look: Features a bold front grille, sharp lines, and available LED headlights and taillights. Trim Levels: L (base), LE, SE, XLE, and XSE. Sportier SE and XSE trims include aerodynamic enhancements, rear spoiler, and 18-inch alloy wheels (XSE).",
+        "images": [
+          "/images/car1.1.jpg",
+          "/images/car1.2.jpg",
+          "/images/car1.3.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Ford EcoSport 2018",
+        "fuel": "Gas",
+        "mileage": "111,000 km",
+        "body": "SUV",
+        "color": "Blue",
+        "transmission": "Automatic",
+        "year": 2018,
+        "location": "ALX",
+        "price": 860000,
+        "engine": 1500,
+        "phone": "+01286998683",
+        "description": "The 2018 Ford EcoSport is a compact SUV that blends practicality, modern design, and advanced technology. Exterior Design: Sleek and Sporty with bold grille, LED DRLs, and sculpted body lines. Trim Levels: S, SE (SYNC 3, alloy wheels), Titanium (Leather seats, sunroof), SES (AWD, tuned suspension), Titanium AWD (Fully loaded).",
+        "images": [
+          "/images/car2.1.jpg",
+          "/images/car2.2.jpg",
+          "/images/car2.3.jpg"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Toyota Corolla 2019",
+        "fuel": "Gas",
+        "mileage": "113,000 km",
+        "body": "Sedan",
+        "color": "Silver",
+        "transmission": "Automatic",
+        "year": 2019,
+        "location": "Assuit",
+        "price": 1050000,
+        "engine": 1600,
+        "phone": "+01117230642",
+        "description": "The 2019 Toyota Corolla is a compact sedan known for its reliability and fuel efficiency. Exterior Design: Sleek with sharp lines and modern grille. Features: Sporty Performance, Advanced Technology, Toyota Safety Sense-P. Trim Levels: L, LE, LE Eco, SE, XLE, XSE.",
+        "images": [
+          "/images/car3.1.jpg",
+          "/images/car3.2.jpg",
+          "/images/car3.3.jpg"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Honda Civic 2019",
+        "fuel": "Gas",
+        "mileage": "50,000 km",
+        "body": "Sedan",
+        "color": "Black",
+        "transmission": "Automatic",
+        "year": 2019,
+        "location": "Sharqia",
+        "price": 1100000,
+        "engine": 1600,
+        "phone": "+01173587655",
+        "description": "The 2019 Honda Civic is a compact sedan with sporty design, strong performance, and fuel efficiency. Trim Levels: LX, EX, SX-L, Si, R. Great for daily driving, commuting, or sporty experience.",
+        "images": [
+          "/images/car4.1.jpg",
+          "/images/car4.2.jpg",
+          "/images/car4.3.jpg"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Mercedes CLA 180 2018",
+        "fuel": "Gas",
+        "mileage": "44,000 km",
+        "body": "Sedan",
+        "color": "Dark blue",
+        "transmission": "Automatic",
+        "year": 2018,
+        "location": "Egypt",
+        "price": 1840000,
+        "engine": 1600,
+        "phone": "+01221509055",
+        "description": "The 2018 Mercedes-Benz CLA 180 is a luxury sedan with a coupe-like design. Interior: premium materials, infotainment system, smartphone integration. Features: Premium package, Driving Assistance Pack, Night package.",
+        "images": [
+          "/images/car5.1.jpg",
+          "/images/car5.2.jpg",
+          "/images/car5.3.jpg"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Mercedes S500 2023",
+        "fuel": "Gas",
+        "mileage": "122,000 km",
+        "body": "Sedan",
+        "color": "Black",
+        "transmission": "Automatic",
+        "year": 2023,
+        "location": "Giza",
+        "price": 8500000,
+        "engine": 3000,
+        "phone": "+01054397652",
+        "description": "The Mercedes S500 is a luxury sedan with elegant design, powerful performance, and advanced technology. Exterior: aerodynamic body, bold grille, LED headlights, chrome accents, alloy wheels.",
+        "images": [
+          "/images/car6.1.jpg",
+          "/images/car6.2.jpg",
+          "/images/car6.3.jpg"
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Chery A5 2011",
+        "fuel": "Petrol",
+        "mileage": "14 km",
+        "body": "Sedan",
+        "color": "Blue",
+        "transmission": "Manual",
+        "year": 2011,
+        "location": "Aswan",
+        "price": 35000,
+        "engine": 1400,
+        "phone": "+01187492588",
+        "description": "The Chery A5 2011 is a compact sedan with economical features. Great for daily or family use but requires regular maintenance. Exterior: Sleek, aerodynamic, modern yet simple design.",
+        "images": [
+          "/images/car7.1.jpg",
+          "/images/car7.2.jpg",
+          "/images/car7.3.jpg"
+        ]
+      }
+    ]
+  }

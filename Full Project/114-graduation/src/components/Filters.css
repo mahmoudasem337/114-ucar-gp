@@ -1,0 +1,198 @@
+/* Filters.css */
+
+.filters-container {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 0.5rem; /* معادل الـ rounded-lg في Tailwind */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* معادل الـ shadow-md في Tailwind */
+    width: 16rem; /* معادل الـ w-64 في Tailwind (16 * 4px = 64px) - قد تحتاج تعديل بسيط حسب الخط */
+}
+
+.filters-container > div {
+    margin-bottom: 1rem; /* معادل الـ space-y-4 في Tailwind (4 * 4px = 16px) */
+}
+
+.filters-container > div:last-child {
+    margin-bottom: 0;
+}
+
+.filter-label {
+    display: block;
+    font-size: 0.875rem; /* معادل الـ text-sm في Tailwind */
+    line-height: 1.25rem; /* إضافة الـ line-height المقابل */
+    font-weight: 500; /* معادل الـ font-medium في Tailwind */
+    color: #374151; /* معادل الـ text-gray-700 في Tailwind */
+    margin-bottom: 0.5rem; /* معادل الـ mb-2 في Tailwind (2 * 4px = 8px) */
+}
+
+.price-range-container {
+    margin-bottom: 0.5rem; /* معادل الـ space-y-2 بشكل غير مباشر */
+}
+
+.price-range-input {
+    width: 100%;
+    height: 0.5rem; /* معادل الـ h-2 في Tailwind (2 * 4px = 8px) */
+    background-color: #e5e7eb; /* معادل الـ bg-gray-200 في Tailwind */
+    border-radius: 9999px; /* لجعل الحواف مدورة مثل الـ rounded-lg في Tailwind */
+    appearance: none; /* لإزالة التنسيقات الافتراضية للمتصفح */
+    cursor: pointer;
+    accent-color: #9333ea; /* معادل الـ accent-purple-600 في Tailwind */
+    background-image: linear-gradient(to right, #9333ea 0%, #9333ea var(--progress), #e5e7eb var(--progress), #e5e7eb 100%);
+    --progress: 0%;
+}
+
+.price-range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem; /* معادل حجم الثمب */
+    height: 1rem; /* معادل حجم الثمب */
+    background: #9333ea;
+    border-radius: 9999px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* إضافة ظل للثمب */
+}
+
+.price-range-input::-moz-range-thumb {
+    width: 1rem; /* معادل حجم الثمب */
+    height: 1rem; /* معادل حجم الثمب */
+    background: #9333ea;
+    border-radius: 9999px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* إضافة ظل للثمب */
+}
+
+.price-value {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.875rem; /* معادل الـ text-sm في Tailwind */
+    line-height: 1.25rem; /* إضافة الـ line-height المقابل */
+    font-weight: 500; /* معادل الـ font-medium في Tailwind */
+    color: #9333ea; /* معادل الـ text-purple-600 في Tailwind */
+}
+
+.brand-checkbox-container > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem; /* معادل الـ space-y-2 بشكل غير مباشر */
+}
+
+.brand-checkbox-container > div:last-child {
+    margin-bottom: 0;
+}
+
+.brand-checkbox {
+    margin-right: 0.5rem; /* معادل الـ mr-2 في Tailwind (2 * 4px = 8px) */
+    /* إضافة تنسيقات مشابهة لشكل Checkbox في Tailwind */
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem; /* معادل الـ rounded في Tailwind */
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.brand-checkbox:checked {
+    background-color: #9333ea;
+    border-color: #9333ea;
+}
+
+.brand-checkbox:checked::before {
+    content: '';
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: white;
+    clip-path: polygon(14% 44%, 0% 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%); /* شكل علامة الصح */
+}
+
+.brand-label {
+    font-size: 0.875rem; /* معادل الـ text-sm في Tailwind */
+    line-height: 1.25rem; /* إضافة الـ line-height المقابل */
+    color: #4b5563; /* معادل الـ text-gray-600 في Tailwind */
+}
+
+.year-select-container > div {
+    margin-bottom: 0.5rem; /* معادل الـ space-y-2 بشكل غير مباشر */
+}
+
+.year-select-container > div:last-child {
+    margin-bottom: 0;
+}
+
+.year-select-label {
+    display: block; /* لجعل الليبل يأخذ سطر كامل */
+    font-size: 0.75rem; /* معادل الـ text-xs في Tailwind */
+    line-height: 1rem; /* إضافة الـ line-height المقابل */
+    color: #6b7280; /* معادل الـ text-gray-500 في Tailwind */
+    margin-bottom: 0.25rem; /* مساحة بسيطة أسفل الليبل */
+}
+
+.year-select {
+    width: 100%;
+    padding: 0.625rem; /* معادل الـ p-2.5 تقريبًا */
+    border: 1px solid #d1d5db; /* معادل الـ border في Tailwind */
+    border-radius: 0.375rem; /* معادل الـ rounded-md في Tailwind */
+    font-size: 0.875rem; /* معادل الـ text-sm في Tailwind */
+    line-height: 1.25rem; /* إضافة الـ line-height المقابل */
+    -webkit-appearance: none; /* لإزالة الأسهم الافتراضية في Chrome */
+    -moz-appearance: none; /* لإزالة الأسهم الافتراضية في Firefox */
+    appearance: none; /* لإزالة الأسهم الافتراضية */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg fill='%239ca3af' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3e%3c/svg%3e"); /* إضافة سهم Select مشابه لـ Tailwind */
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1em 1em;
+}
+
+.kilometers-select {
+    width: 100%;
+    padding: 0.625rem; /* معادل الـ p-2.5 تقريبًا */
+    border: 1px solid #d1d5db; /* معادل الـ border في Tailwind */
+    border-radius: 0.375rem; /* معادل الـ rounded-md في Tailwind */
+    font-size: 0.875rem; /* معادل الـ text-sm في Tailwind */
+    line-height: 1.25rem; /* إضافة الـ line-height المقابل */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg fill='%239ca3af' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1em 1em;
+}
+
+.body-style-select {
+    width: 100%;
+    padding: 0.625rem; /* معادل الـ p-2.5 تقريبًا */
+    border: 1px solid #d1d5db; /* معادل الـ border في Tailwind */
+    border-radius: 0.375rem; /* معادل الـ rounded-md في Tailwind */
+    font-size: 0.875rem; /* معادل الـ text-sm في Tailwind */
+    line-height: 1.25rem; /* إضافة الـ line-height المقابل */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg fill='%239ca3af' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1em 1em;
+}
+
+.transmission-select {
+    width: 100%;
+    padding: 0.625rem; /* معادل الـ p-2.5 تقريبًا */
+    border: 1px solid #d1d5db; /* معادل الـ border في Tailwind */
+    border-radius: 0.375rem; /* معادل الـ rounded-md في Tailwind */
+    font-size: 0.875rem; /* معادل الـ text-sm في Tailwind */
+    line-height: 1.25rem; /* إضافة الـ line-height المقابل */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg fill='%239ca3af' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1em 1em;
+}

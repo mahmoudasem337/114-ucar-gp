@@ -1,0 +1,258 @@
+/* Details.css */
+.details-page {
+    background-color: #f3f4f6; /* Equivalent to bg-gray-100 */
+    min-height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .details-wrapper {
+    max-width: 960px; /* Equivalent to max-w-4xl */
+    margin: 0 auto;
+    padding-left: 20px; /* Approximation of px-4 */
+    padding-right: 20px; /* Approximation of px-4 */
+  }
+  
+  @media (min-width: 640px) {
+    .details-wrapper {
+      padding-left: 24px; /* Approximation of sm:px-6 */
+      padding-right: 24px; /* Approximation of sm:px-6 */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .details-wrapper {
+      padding-left: 32px; /* Approximation of lg:px-8 */
+      padding-right: 32px; /* Approximation of lg:px-8 */
+    }
+  }
+  
+  .details-back-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4b5563; /* Equivalent to text-gray-600 */
+    margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+    text-decoration: none;
+  }
+  
+  .details-back-button:hover {
+    color: #111827; /* Equivalent to hover:text-gray-900 */
+  }
+  
+  .details-back-icon {
+    width: 1.25rem; /* Approximation of size 20 / 16 */
+    height: 1.25rem; /* Approximation of size 20 / 16 */
+  }
+  
+  .details-car-card {
+    background-color: #fff; /* Equivalent to bg-white */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06); /* Approximation of shadow-md */
+    overflow: hidden;
+  }
+  
+  /* Swiper styles */
+  .details-swiper-container {
+    height: 500px; /* Equivalent to h-[500px] */
+    width: 100%; /* Equivalent to w-full */
+    background-color: #f3f4f6; /* Equivalent to bg-gray-100 */
+  }
+  
+  .details-swiper-slide {
+    width: 100% !important; /* Override Swiper's inline styles */
+    height: 100% !important; /* Override Swiper's inline styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+  }
+  
+  .details-image-container {
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent overflow */
+  }
+  
+  .details-loading-spinner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6; /* Equivalent to bg-gray-100 */
+  }
+  
+  .details-loading-icon {
+    width: 3rem; /* Approximation of w-12 */
+    height: 3rem; /* Approximation of h-12 */
+    color: #9ca3af; /* Equivalent to text-gray-400 */
+    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; /* Equivalent to animate-pulse */
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .details-car-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    border: none; /* Remove any border */
+  }
+  
+  .details-object-contain {
+    object-fit: contain;
+  }
+  
+  .details-object-cover {
+    object-fit: cover;
+  }
+  
+  /* Car details section */
+  .details-content-wrapper {
+    padding: 1.5rem; /* Equivalent to p-6 */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Approximation of space-y-6 gap */
+  }
+  
+  .details-header-price-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .details-header-price-row {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  .details-car-name {
+    font-size: 1.875rem; /* Equivalent to text-3xl */
+    font-weight: bold;
+    color: #111827; /* Equivalent to text-gray-900 */
+  }
+  
+  .details-car-price {
+    font-size: 1.5rem; /* Equivalent to text-2xl */
+    font-weight: bold;
+    color: #16a34a; /* Equivalent to text-green-600 */
+  }
+  
+  .details-specs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .details-specs-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .details-specs-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .details-spec-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4b5563; /* Equivalent to text-gray-600 */
+    padding: 0.75rem;
+    background-color: #f9fafb; /* Equivalent to bg-gray-50 */
+    border-radius: 0.5rem;
+  }
+  
+  .details-spec-icon {
+    color: #8b5cf6; /* Equivalent to text-purple-600 */
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .details-spec-label {
+    font-weight: 500;
+    color: #374151; /* Equivalent to text-gray-700 */
+  }
+  
+  .details-spec-value {
+    color: #111827; /* Equivalent to text-gray-900 */
+  }
+  
+  .details-color-dot {
+    width: 1.25rem; /* Approximation of w-5 */
+    height: 1.25rem; /* Approximation of h-5 */
+    border-radius: 50%;
+  }
+  
+  .details-description-section {
+    border-top: 1px solid #e5e7eb; /* Equivalent to border-t */
+    padding-top: 1.5rem;
+  }
+  
+  .details-description-title {
+    font-size: 1.25rem; /* Equivalent to text-xl */
+    font-weight: 600; /* Approximation of font-semibold */
+    margin-bottom: 1rem;
+  }
+  
+  .details-description-text {
+    color: #4b5563; /* Equivalent to text-gray-600 */
+    white-space: pre-wrap;
+    background-color: #f9fafb; /* Equivalent to bg-gray-50 */
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .details-contact-section {
+    margin-top: 1.5rem;
+  }
+  
+  .details-contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%; /* Equivalent to w-full */
+    background-color: #8b5cf6; /* Equivalent to bg-purple-600 */
+    color: #fff; /* Equivalent to text-white */
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out; /* Equivalent to hover:bg-purple-700 */
+  }
+  
+  .details-contact-button:hover {
+    background-color: #7c3aed; /* Equivalent to hover:bg-purple-700 */
+  }
+  
+  .details-phone-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .details-not-found {
+    text-align: center;
+    color: #dc2626; /* Equivalent to text-red-500 */
+    font-size: 1.25rem;
+    margin-top: 2.5rem;
+  }
